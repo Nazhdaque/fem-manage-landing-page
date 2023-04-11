@@ -1,0 +1,44 @@
+@layer components {
+	.top-blob,
+	.middle-blob,
+	.bottom-blobs {
+		position: relative;
+	}
+
+	.top-blob::before,
+	.middle-blob::before,
+	.bottom-blobs::before,
+	.bottom-blobs::after {
+		position: absolute;
+		content: url(../assets/images/bg-tablet-pattern.svg);
+		z-index: -1;
+	}
+
+	.top-blob::before {
+		right: -25%;
+		bottom: 12%;
+	}
+
+	.middle-blob::before {
+		top: 52%;
+		left: -52%;
+	}
+
+	.bottom-blobs {
+		isolation: isolate;
+	}
+
+	.bottom-blobs::before {
+		transform: scale(0.66);
+		top: -250%;
+		left: -12%;
+		opacity: 0.15;
+	}
+
+	.bottom-blobs::after {
+		transform: scale(0.66);
+		top: -650%;
+		right: -50%;
+		opacity: 0.15;
+	}
+}

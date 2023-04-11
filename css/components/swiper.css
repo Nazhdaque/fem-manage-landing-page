@@ -1,0 +1,47 @@
+@layer components {
+	.swiper {
+		max-width: 100%;
+	}
+
+	.swiper-slide {
+		cursor: pointer;
+		background: linear-gradient(
+			to bottom,
+			transparent 0%,
+			transparent 50%,
+			var(--clr-neutral-4) 50%,
+			var(--clr-neutral-4) 100%
+		);
+		border-radius: 4px;
+		text-align: center;
+	}
+
+	.slide-text-wrapper {
+		padding: 2.5rem;
+		margin-top: -2.5rem;
+		background-color: var(--clr-neutral-4);
+		border-radius: 0.25rem;
+	}
+
+	.slide-header {
+		padding-block: 1.5rem;
+	}
+
+	.slide-avatar {
+		width: 5rem;
+		margin-inline: auto;
+	}
+
+	.swiper-pagination-bullet {
+		--bullet-size: 0.75rem;
+		width: var(--bullet-size) !important;
+		height: var(--bullet-size) !important;
+		border: 1px solid var(--clr-primary-1) !important;
+		opacity: 1 !important;
+		background: transparent !important;
+	}
+
+	.swiper-pagination-bullet-active {
+		background: var(--clr-primary-1) !important;
+	}
+}

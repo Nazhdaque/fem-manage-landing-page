@@ -1,0 +1,89 @@
+@layer base {
+	:root {
+		--max-content-width: 75rem;
+		--min-content-width: 20rem;
+
+		--clr-primary-1: hsl(12, 88%, 59%);
+		--clr-primary-2: hsl(228, 39%, 23%);
+		--clr-primary-3: hsl(12, 88%, 75%);
+		--clr-neutral-1: hsl(233, 12%, 13%);
+		--clr-neutral-2: hsl(227, 12%, 61%);
+		--clr-neutral-3: hsl(13, 100%, 96%);
+		--clr-neutral-4: hsl(0, 0%, 98%);
+		--clr-neutral-5: hsl(227, 12%, 80%);
+
+		--border-radius: 100vw;
+	}
+
+	/* Box sizing rules */
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box !important;
+	}
+
+	/* Remove default margin */
+	* {
+		margin: 0;
+		padding: 0;
+		font-family: inherit;
+	}
+
+	/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+	ul,
+	ol {
+		list-style: none;
+	}
+
+	/* Set core root defaults */
+	html:focus-within {
+		scroll-behavior: smooth;
+	}
+
+	/* Set core body defaults */
+	body {
+		text-rendering: optimizeSpeed;
+		overflow-x: hidden;
+		font-family: var(--ff-primary);
+		font-size: var(--fs-400);
+		line-height: var(--line-height);
+		min-width: var(--min-content-width);
+	}
+
+	/* A elements that don't have a class get default styles */
+	a:not([class]) {
+		text-decoration-skip-ink: auto;
+	}
+
+	/* Make images easier to work with */
+	img,
+	picture,
+	svg {
+		max-width: 100%;
+		display: block;
+	}
+
+	button,
+	a {
+		all: unset;
+		outline: revert;
+		display: inline-flex;
+		cursor: pointer;
+	}
+
+	/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+	@media (prefers-reduced-motion: reduce) {
+		html:focus-within {
+			scroll-behavior: auto;
+		}
+
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}

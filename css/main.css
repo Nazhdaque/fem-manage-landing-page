@@ -1,0 +1,14 @@
+@layer base, components, parts, finishing;
+
+@import url(./base.css);
+@import url(./components/typography.css);
+@import url(./components/layout.css);
+@import url(./components/buttons.css);
+@import url(./components/swiper.css);
+@import url(./components/list.css);
+@import url(./components/blobs.css);
+@import url(./parts/header.css);
+@import url(./parts/footer.css);
+@import url(./parts/parts_specific_styles.css);
+@import url(./media.css);
+@import url(./utilities.css);

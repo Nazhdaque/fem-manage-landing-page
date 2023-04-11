@@ -1,0 +1,70 @@
+@layer parts {
+	.logo {
+		width: 10rem;
+		aspect-ratio: 146 / 24;
+	}
+
+	/* hero section specific styles */
+	.hero-section {
+		margin-bottom: 9rem;
+	}
+
+	.text-limiter {
+		max-width: 30ch;
+		margin-block: 2rem 3rem;
+	}
+
+	.hero-img {
+		place-self: center;
+		transform: scale(1.2);
+	}
+
+	.hero-section .title-lg {
+		max-width: 15ch;
+	}
+
+	/* about section specific styles */
+	.about-section {
+		margin-bottom: 12rem;
+	}
+
+	.about-section .title-md {
+		max-width: 20ch;
+	}
+
+	.about-section .list {
+		place-self: center;
+		max-width: 50ch;
+		margin-top: 0.8rem;
+	}
+
+	/* slider section specific styles */
+	.slider-section {
+		text-align: center;
+		margin-bottom: 10rem;
+	}
+
+	.slider-section .title-md {
+		margin-bottom: 5rem;
+	}
+
+	.slider-section .pill-btn {
+		place-self: center;
+		margin-block: 3rem;
+	}
+
+	/* cta section specific styles */
+	.cta-section {
+		background-color: var(--clr-primary-1);
+		padding-block: 4rem;
+		overflow: hidden;
+	}
+
+	.cta-section .title-md {
+		color: var(--clr-neutral-4);
+	}
+
+	.cta-section .pill-btn {
+		place-self: center end;
+	}
+}

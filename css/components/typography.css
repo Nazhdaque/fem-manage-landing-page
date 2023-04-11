@@ -1,0 +1,79 @@
+@layer base {
+	@font-face {
+		font-display: swap;
+		font-family: "Be Vietnam Pro";
+		font-style: normal;
+		font-weight: 400;
+		src: url("./assets/fonts/be-vietnam-pro-v10-latin/be-vietnam-pro-v10-latin-regular.woff2") format("woff2");
+	}
+
+	/* be-vietnam-pro-500 - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Be Vietnam Pro";
+		font-style: normal;
+		font-weight: 500;
+		src: url("./assets/fonts/be-vietnam-pro-v10-latin/be-vietnam-pro-v10-latin-500.woff2") format("woff2");
+	}
+
+	/* be-vietnam-pro-700 - latin */
+	@font-face {
+		font-display: swap;
+		font-family: "Be Vietnam Pro";
+		font-style: normal;
+		font-weight: 700;
+		src: url("./assets/fonts/be-vietnam-pro-v10-latin/be-vietnam-pro-v10-latin-700.woff2") format("woff2");
+	}
+
+	:root {
+		--ff-primary: "Be Vietnam Pro", sans-serif;
+
+		--fw-reg: 400;
+		--fw-semi-bold: 500;
+		--fw-bold: 700;
+
+		--fs-100: 0.8125rem;
+		--fs-200: 0.875rem;
+		--fs-300: 0.9375rem;
+		--fs-400: 1rem;
+		--fs-600: 1.875rem;
+		--fs-700: 2.25rem;
+		--fs-800: 2.5rem;
+		--fs-900: 3.5rem;
+
+		--line-height: 1.75;
+	}
+
+	.title-lg {
+		font-size: var(--fs-900);
+		font-weight: var(--fw-bold);
+		line-height: 1.3;
+	}
+
+	.title-md {
+		font-size: var(--fs-800);
+		font-weight: var(--fw-bold);
+		line-height: 1.2;
+	}
+
+	.title-sm {
+		font-size: var(--fs-400);
+		font-weight: var(--fw-semi-bold);
+	}
+
+	.title-lg,
+	.title-md,
+	.title-sm {
+		color: var(--clr-primary-2);
+	}
+
+	.text-regular {
+		font-size: var(--fs-400);
+		font-weight: var(--fw-reg);
+		color: var(--clr-neutral-2);
+	}
+
+	.text-sm {
+		font-size: var(--fs-100);
+	}
+}

@@ -1,0 +1,28 @@
+@layer components {
+	.base-layout {
+		display: grid;
+		grid-template-rows: min-content 1fr min-content;
+		min-height: 100vh;
+		min-height: 100dvh;
+	}
+
+	.limiter {
+		display: grid;
+		column-gap: max(1rem, 4vmin);
+		grid-template-columns: 1fr minmax(0, var(--max-content-width)) 1fr;
+	}
+
+	.limiter > *:not(.grid-item-full-width) {
+		grid-column: 2;
+	}
+
+	.col-2 {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 9rem;
+	}
+
+	main {
+		display: grid;
+	}
+}
