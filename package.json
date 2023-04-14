@@ -12,6 +12,7 @@
     "vite": "^4.2.0"
   },
   "dependencies": {
+    "just-validate": "^4.2.0",
     "swiper": "^9.2.0"
   }
 }

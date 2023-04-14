@@ -15,13 +15,15 @@
 	}
 
 	.top-blob::before {
-		right: -25%;
-		bottom: 12%;
+		top: -27rem;
+		right: -20rem;
+		transform: scale(1.15);
 	}
 
 	.middle-blob::before {
-		top: 52%;
-		left: -52%;
+		top: 23rem;
+		left: -43rem;
+		transform: scale(1.15);
 	}
 
 	.bottom-blobs {
@@ -30,15 +32,15 @@
 
 	.bottom-blobs::before {
 		transform: scale(0.66);
-		top: -250%;
-		left: -12%;
+		top: -15rem;
+		left: -7rem;
 		opacity: 0.15;
 	}
 
 	.bottom-blobs::after {
 		transform: scale(0.66);
-		top: -650%;
-		right: -50%;
+		top: -37rem;
+		left: 63rem;
 		opacity: 0.15;
 	}
 }

@@ -16,7 +16,7 @@
 
 	.hero-img {
 		place-self: center;
-		transform: scale(1.2);
+		transform: scale(1.2) translateX(-5%);
 	}
 
 	.hero-section .title-lg {

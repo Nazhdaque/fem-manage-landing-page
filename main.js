@@ -28,40 +28,6 @@ const navPanelLinks = document.querySelectorAll(".main-header__nav-links a");
 // 	sendValidationRequest(emailAddress);
 // });
 
-// const setMobile = () => {
-// 	navPanel.classList.add("mobile");
-// 	navPanelLinks.forEach((link) => {
-// 		link.addEventListener("click", handleClick);
-// 	});
-// };
-// const delMobile = () => {
-// 	navPanel.classList.remove("mobile");
-// 	navPanelLinks.forEach((link) => {
-// 		link.removeEventListener("click", handleClick);
-// 	});
-// };
-// const showHideNav = () => navPanel.classList.toggle("visible");
-// const switchMobile = (isMobileSize) => (isMobileSize ? setMobile() : delMobile());
-// const mobileWidthMediaQuery = window.matchMedia(`(max-width: ${mobileBreakpoint}px)`);
-// const checkMobile = () => window.innerWidth <= mobileBreakpoint && setMobile();
-// const watchMobile = () => mobileWidthMediaQuery.addEventListener("change", (event) => switchMobile(event.matches));
-// const setToggleImg = (src) => {
-// 	src === "./assets/images/icon-hamburger.svg"
-// 		? toggleImg.setAttribute("src", "./assets/images/icon-close.svg")
-// 		: toggleImg.setAttribute("src", "./assets/images/icon-hamburger.svg");
-// };
-// const handleClick = (event) => {
-// 	const src = toggleImg.getAttribute("src");
-// 	showHideNav();
-// 	setToggleImg(src);
-// };
-
-// checkMobile();
-// watchMobile();
-
-// const switchState = () => toggleMobile.addEventListener("click", handleClick);
-// switchState();
-
 class mobileMenu {
 	constructor(mobileBreakpoint) {
 		this.mobileBreakpoint = mobileBreakpoint;
@@ -72,37 +38,30 @@ class mobileMenu {
 		this.mobileWidthMediaQuery = window.matchMedia(`(max-width: ${mobileBreakpoint}px)`);
 	}
 
-	setMobile = () => {
-		this.navPanel.classList.add("mobile");
-		this.navPanelLinks.forEach((link) => link.addEventListener("click", this.handleClick));
+	setMobile = (isMobile) => {
+		if (isMobile) {
+			this.navPanel.classList.add("mobile");
+			this.navPanelLinks.forEach((link) => link.addEventListener("click", this.handleClick));
+		} else {
+			navPanel.classList.remove("mobile");
+			navPanelLinks.forEach((link) => link.removeEventListener("click", this.handleClick));
+		}
 	};
-
-	delMobile = () => {
-		navPanel.classList.remove("mobile");
-		navPanelLinks.forEach((link) => link.removeEventListener("click", this.handleClick));
-	};
-
 	showHideNav = () => navPanel.classList.toggle("visible");
-
-	switchMobile = (isMobileSize) => (isMobileSize ? this.setMobile() : this.delMobile());
-
-	checkMobile = () => window.innerWidth <= this.mobileBreakpoint && this.setMobile();
-
-	watchMobile = () =>
-		this.mobileWidthMediaQuery.addEventListener("change", (event) => this.switchMobile(event.matches));
-
+	switchMobile = (isMobileSize) => (isMobileSize ? this.setMobile(true) : this.setMobile(false));
 	setToggleImg = (src) => {
 		src === "./assets/images/icon-hamburger.svg"
 			? toggleImg.setAttribute("src", "./assets/images/icon-close.svg")
 			: toggleImg.setAttribute("src", "./assets/images/icon-hamburger.svg");
 	};
-
-	handleClick = (event) => {
+	handleClick = () => {
 		const src = toggleImg.getAttribute("src");
 		this.showHideNav();
 		this.setToggleImg(src);
 	};
 
+	checkMobile = () => window.innerWidth <= this.mobileBreakpoint && this.setMobile(true);
+	watchMobile = () => this.mobileWidthMediaQuery.addEventListener("change", (event) => this.switchMobile(event.matches));
 	switchState = () => toggleMobile.addEventListener("click", this.handleClick);
 }
 
