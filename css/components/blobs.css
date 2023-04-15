@@ -10,7 +10,7 @@
 	.bottom-blobs::before,
 	.bottom-blobs::after {
 		position: absolute;
-		content: url(../assets/images/bg-tablet-pattern.svg);
+		content: url(/assets/images/bg-tablet-pattern.svg);
 		z-index: -1;
 	}
 

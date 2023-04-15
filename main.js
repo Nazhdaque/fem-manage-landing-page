@@ -1,32 +1,20 @@
 import "./css/main.css";
 import Swiper from "swiper/bundle";
 import "swiper/css/bundle";
+import JustValidate from "just-validate";
 
-const toggleMobile = document.querySelector(".hamburger");
-const navPanel = document.querySelector(".main-header__nav-panel");
-const toggleImg = document.querySelector(".hamburger > img");
-const navPanelLinks = document.querySelectorAll(".main-header__nav-links a");
-
-// const API_KEY = "4a344ddb464e43fca5f9502ba6142607";
-// const API_URL = "https://emailvalidation.abstractapi.com/v1/?api_key=" + API_KEY;
-
-// const footerForm = document.querySelector(".main-footer__form");
-// footerForm.addEventListener("submit", (event) => {
-// 	event.preventDefault();
-// 	const emailAddress = document.querySelector("#email").value;
-// 	const sendValidationRequest = async (emailAddress) => {
-// 		try {
-// 			const fullURL = API_URL + "&email=" + emailAddress;
-// 			const apiResponse = await fetch(fullURL);
-// 			const data = await apiResponse.json();
-// 			const isValid = data.is_valid_format.value;
-// 			console.log(isValid);
-// 		} catch (error) {
-// 			throw new Error("Unable to validate email");
-// 		}
-// 	};
-// 	sendValidationRequest(emailAddress);
-// });
+const validator = new JustValidate("#main-footer__form", {
+	errorLabelCssClass: "invalid",
+});
+validator.addField("#email", [
+	{
+		rule: "required",
+	},
+	{
+		rule: "email",
+		errorMessage: "Please insert a valid email",
+	},
+]);
 
 class mobileMenu {
 	constructor(mobileBreakpoint) {
@@ -43,26 +31,27 @@ class mobileMenu {
 			this.navPanel.classList.add("mobile");
 			this.navPanelLinks.forEach((link) => link.addEventListener("click", this.handleClick));
 		} else {
-			navPanel.classList.remove("mobile");
-			navPanelLinks.forEach((link) => link.removeEventListener("click", this.handleClick));
+			this.navPanel.classList.remove("mobile");
+			this.navPanelLinks.forEach((link) => link.removeEventListener("click", this.handleClick));
 		}
 	};
-	showHideNav = () => navPanel.classList.toggle("visible");
+	showHideNav = () => this.navPanel.classList.toggle("visible");
 	switchMobile = (isMobileSize) => (isMobileSize ? this.setMobile(true) : this.setMobile(false));
 	setToggleImg = (src) => {
-		src === "./assets/images/icon-hamburger.svg"
-			? toggleImg.setAttribute("src", "./assets/images/icon-close.svg")
-			: toggleImg.setAttribute("src", "./assets/images/icon-hamburger.svg");
+		src === "/assets/images/icon-hamburger.svg"
+			? this.toggleImg.setAttribute("src", "/assets/images/icon-close.svg")
+			: this.toggleImg.setAttribute("src", "/assets/images/icon-hamburger.svg");
 	};
 	handleClick = () => {
-		const src = toggleImg.getAttribute("src");
+		const src = this.toggleImg.getAttribute("src");
 		this.showHideNav();
 		this.setToggleImg(src);
 	};
 
 	checkMobile = () => window.innerWidth <= this.mobileBreakpoint && this.setMobile(true);
-	watchMobile = () => this.mobileWidthMediaQuery.addEventListener("change", (event) => this.switchMobile(event.matches));
-	switchState = () => toggleMobile.addEventListener("click", this.handleClick);
+	watchMobile = () =>
+		this.mobileWidthMediaQuery.addEventListener("change", (event) => this.switchMobile(event.matches));
+	switchState = () => this.toggleMobile.addEventListener("click", this.handleClick);
 }
 
 const headerNavMenu = new mobileMenu(992);

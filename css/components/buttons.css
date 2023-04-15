@@ -10,6 +10,10 @@
 		box-shadow: 0 1.125em 1em -1em var(--clr-primary-1);
 	}
 
+	.pill-btn:focus {
+		outline: none;
+	}
+
 	.pill-btn:not(.alt):hover,
 	.pill-btn:not(.alt):focus-visible {
 		background-color: var(--clr-primary-3);

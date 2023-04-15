@@ -15,12 +15,12 @@
 	.grid-item-full-width {
 		grid-column: 1 / -1;
 	}
-}
 
-.hidden {
-	display: none;
-}
+	.hidden {
+		display: none;
+	}
 
-.visible {
-	display: initial;
+	.visible {
+		display: initial;
+	}
 }

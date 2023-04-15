@@ -43,6 +43,10 @@
 		margin-inline: 15%;
 	}
 
+	.main-footer__nav-links > *:hover {
+		color: var(--clr-primary-1);
+	}
+
 	.main-footer__nav-links > * + * {
 		margin-top: 1rem;
 	}
@@ -60,11 +64,35 @@
 	.main-footer__form input[type="email"] {
 		border: none;
 		border-radius: 100vw;
-		place-self: stretch;
-		padding-inline: 1.5em 2em;
+		/* place-self: stretch; */
+		min-height: 100%;
+		padding-inline: 1.5em;
 		font-size: var(--fs-200);
 		line-height: 1;
 		color: var(--clr-neutral-2);
+	}
+
+	.main-footer__form input[type="email"]:focus-visible::placeholder {
+		color: var(--clr-neutral-2);
+	}
+
+	.main-footer__form input[type="email"]:focus-visible {
+		outline: 2px solid var(--clr-primary-1);
+		outline-offset: -1px;
+		color: var(--clr-primary-1);
+	}
+
+	.input-holder {
+		place-self: stretch;
+		position: relative;
+	}
+
+	.invalid {
+		font-size: var(--fs-200);
+		font-style: italic;
+		position: absolute;
+		top: 3.25rem;
+		left: 1.25rem;
 	}
 
 	.main-footer__form .pill-btn {

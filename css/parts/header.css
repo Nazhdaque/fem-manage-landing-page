@@ -19,6 +19,13 @@
 		font-size: var(--fs-100);
 	}
 
+	.main-header__nav-links > * :hover {
+		color: var(--clr-neutral-2);
+	}
+	.mobile .main-header__nav-links > * :hover {
+		color: var(--clr-primary-1);
+	}
+
 	.hamburger {
 		margin-left: auto;
 		z-index: 1;
