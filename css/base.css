@@ -15,6 +15,13 @@
 		--border-radius: 100vw;
 	}
 
+	html,
+	body {
+		overflow-x: hidden;
+		min-height: 100vh;
+		min-height: 100dvh;
+	}
+
 	/* Box sizing rules */
 	*,
 	*::before,
@@ -43,7 +50,6 @@
 	/* Set core body defaults */
 	body {
 		text-rendering: optimizeSpeed;
-		overflow-x: hidden;
 		font-family: var(--ff-primary);
 		font-size: var(--fs-400);
 		line-height: var(--line-height);
