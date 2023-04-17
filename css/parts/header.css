@@ -3,7 +3,7 @@
 		display: grid;
 		grid-template-columns: max-content 1fr max-content;
 		place-items: center;
-		margin-block: 4rem 12rem;
+		margin-block: 3rem 10rem;
 		z-index: 1;
 	}
 

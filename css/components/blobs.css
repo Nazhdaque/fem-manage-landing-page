@@ -27,6 +27,7 @@
 	}
 
 	.bottom-blobs {
+		--opacity: 0.075;
 		isolation: isolate;
 	}
 
@@ -34,13 +35,13 @@
 		transform: scale(0.66);
 		top: -15rem;
 		left: -7rem;
-		opacity: 0.15;
+		opacity: var(--opacity);
 	}
 
 	.bottom-blobs::after {
 		transform: scale(0.66);
 		top: -37rem;
 		left: 63rem;
-		opacity: 0.15;
+		opacity: var(--opacity);
 	}
 }
