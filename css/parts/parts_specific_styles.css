@@ -1,5 +1,5 @@
 @layer parts {
-	.logo {
+	.logo svg {
 		width: 10rem;
 		aspect-ratio: 146 / 24;
 	}
