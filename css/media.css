@@ -51,7 +51,7 @@
 
 		/* about section specific styles */
 		.about-section {
-			margin-bottom: 3rem;
+			margin-bottom: 5rem;
 		}
 
 		.about-section .title-md {
@@ -157,11 +157,12 @@
 		/* blobs */
 		.top-blob::before {
 			transform: scale(0.55);
+			top: -25rem;
 		}
 
 		.middle-blob::before {
 			transform: scale(0.4);
-			top: -36rem;
+			top: -37rem;
 			left: -1rem;
 		}
 
@@ -170,8 +171,12 @@
 			margin-inline: 1rem;
 		}
 
+		.slider-section .pill-btn {
+			margin-block: 2.5rem 3rem;
+		}
+
 		.swiper-wrapper {
-			padding-bottom: 4rem;
+			padding-bottom: 3.5rem;
 		}
 	}
 }

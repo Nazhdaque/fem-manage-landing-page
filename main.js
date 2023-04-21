@@ -63,7 +63,7 @@ const swiper = new Swiper(".swiper", {
 	autoplay: {
 		delay: 3000,
 	},
-	spaceBetween: 20,
+	spaceBetween: 30,
 	direction: "horizontal",
 	keyboard: {
 		enabled: true,
