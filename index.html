@@ -1,64 +1,100 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
+<html lang="en"
+			prefix="og: https://ogp.me/ns#">
 
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/png" sizes="32x32" href="/fem-manage-landing-page/images/favicon-32x32.png">
+	<meta http-equiv="X-UA-Compatible"
+				content="IE=edge">
+	<meta name="viewport"
+				content="width=device-width, initial-scale=1.0">
+	<link rel="icon"
+				type="image/png"
+				sizes="32x32"
+				href="/fem-manage-landing-page/images/favicon-32x32.png">
 	<title>Frontend Mentor | Manage landing page</title>
-	<meta name="description" content="Responsive landing page using CSS grid, flex, swiper.js, just-validate">
+	<meta name="description"
+				content="Responsive landing page using CSS grid, flex, swiper.js, just-validate">
 	<!-- Open Graph / Facebook -->
-	<meta property="og:title" content="Frontend Mentor | Manage landing page">
-	<meta property="og:description" content="Responsive landing page using CSS grid, flex, swiper.js, just-validate">
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://nazhdaque.github.io/fem-manage-landing-page/">
-	<meta property="og:image" content="./images/preview.jpg">
-	<meta property="og:image:width" content="1200">
-	<meta property="og:image:height" content="630">
+	<meta property="og:title"
+				content="Frontend Mentor | Manage landing page">
+	<meta property="og:description"
+				content="Responsive landing page using CSS grid, flex, swiper.js, just-validate">
+	<meta property="og:type"
+				content="website">
+	<meta property="og:url"
+				content="https://nazhdaque.github.io/fem-manage-landing-page/">
+	<meta property="og:image"
+				content="./images/preview.jpg">
+	<meta property="og:image:width"
+				content="1200">
+	<meta property="og:image:height"
+				content="630">
 	<!-- Twitter -->
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Frontend Mentor | Manage landing page">
-	<meta name="twitter:description" content="Responsive landing page using CSS grid, flex, swiper.js, just-validate">
-	<meta name="twitter:url" content="https://nazhdaque.github.io/fem-manage-landing-page/">
-	<meta name="twitter:image" content="./images/preview.jpg">
-  <script type="module" crossorigin src="/fem-manage-landing-page/assets/index-c72235a8.js"></script>
-  <link rel="stylesheet" href="/fem-manage-landing-page/assets/index-5d2c7590.css">
+	<meta name="twitter:card"
+				content="summary_large_image">
+	<meta name="twitter:title"
+				content="Frontend Mentor | Manage landing page">
+	<meta name="twitter:description"
+				content="Responsive landing page using CSS grid, flex, swiper.js, just-validate">
+	<meta name="twitter:url"
+				content="https://nazhdaque.github.io/fem-manage-landing-page/">
+	<meta name="twitter:image"
+				content="./images/preview.jpg">
+  <script type="module" crossorigin src="/fem-manage-landing-page/assets/index-db30b414.js"></script>
+  <link rel="stylesheet" href="/fem-manage-landing-page/assets/index-ce3f5ff4.css">
 </head>
 
 <body class="base-layout">
 	<header class="limiter">
 		<div class="main-header">
-			<a href="#" class="logo" aria-label="home">
+			<a href="#"
+				 class="logo"
+				 aria-label="home">
 				<svg>
 					<use href="/fem-manage-landing-page/images/logo-simbol.svg#logo"></use>
 				</svg>
 			</a>
 
-			<nav class="main-header__nav-panel" aria-label="header website menu">
+			<button class="hamburger"
+							aria-label="mobile view menu toggle">
+				<img class="hamburger-icon"
+						 src="/fem-manage-landing-page/images/icon-hamburger.svg"
+						 alt="icon hamburger">
+				<!-- <img class="hamburger-icon hidden close"
+						 src="/images/icon-close.svg"
+						 alt="icon close"> -->
+			</button>
+
+			<nav class="main-header__nav-panel"
+					 aria-label="header website menu">
 				<ul class="main-header__nav-links">
-					<li><a href="#">Pricing</a></li>
-					<li><a href="#">Product</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Careers</a></li>
-					<li><a href="#">Community</a></li>
+					<li><a class="nav-link"
+							 href="#">Pricing</a></li>
+					<li><a class="nav-link"
+							 href="#">Product</a></li>
+					<li><a class="nav-link"
+							 href="#">About Us</a></li>
+					<li><a class="nav-link"
+							 href="#">Careers</a></li>
+					<li><a class="nav-link"
+							 href="#">Community</a></li>
 				</ul>
 			</nav>
 
 			<button class="pill-btn">Get Started</button>
 
-			<button class="hamburger" aria-label="mobile view menu toggle">
-				<img class="hamburger-icon" src="/fem-manage-landing-page/images/icon-hamburger.svg" alt="icon hamburger">
-				<img class="hamburger-icon hidden" src="/fem-manage-landing-page/images/icon-close.svg" alt="icon close">
-			</button>
+
 		</div>
 	</header>
 
 	<main>
-		<section class="limiter hero-section" aria-labelledby="primary-title">
+		<section class="limiter hero-section"
+						 aria-labelledby="primary-title">
 			<div class="col-2 top-blob">
 				<div class="grid-center-lg">
-					<h1 class="title-lg" id="primary-title">Bring everyone together to build better products.</h1>
+					<h1 class="title-lg"
+							id="primary-title">Bring everyone together to build better products.</h1>
 					<p class="text-regular text-limiter">
 						Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in
 						view.
@@ -66,14 +102,18 @@
 					<button class="pill-btn">Get Started</button>
 				</div>
 
-				<img class="hero-img" src="/fem-manage-landing-page/images/illustration-intro.svg" alt="infographics">
+				<img class="hero-img"
+						 src="/fem-manage-landing-page/images/illustration-intro.svg"
+						 alt="infographics">
 			</div>
 		</section>
 
-		<section class="limiter about-section" aria-labelledby="secondary-title-1">
+		<section class="limiter about-section"
+						 aria-labelledby="secondary-title-1">
 			<div class="col-2 middle-blob">
 				<div class="grid-center-lg">
-					<h2 class="title-md" id="secondary-title-1">What’s different about Manage?</h2>
+					<h2 class="title-md"
+							id="secondary-title-1">What’s different about Manage?</h2>
 					<p class="text-regular text-limiter">
 						Manage provides all the functionality your team needs, without the complexity. Our software is tailor-made
 						for modern digital product teams.
@@ -106,13 +146,17 @@
 			</div>
 		</section>
 
-		<section class="limiter slider-section" aria-labelledby="secondary-title-2">
-			<h2 class="title-md" id="secondary-title-2">What they’ve said</h2>
+		<section class="limiter slider-section"
+						 aria-labelledby="secondary-title-2">
+			<h2 class="title-md"
+					id="secondary-title-2">What they’ve said</h2>
 
 			<div class="swiper grid-item-full-width">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<img class="slide-avatar" src="/fem-manage-landing-page/images/avatar-anisha.png" alt="">
+						<img class="slide-avatar"
+								 src="/fem-manage-landing-page/images/avatar-anisha.png"
+								 alt="">
 						<div class="slide-text-wrapper">
 							<h3 class="slide-header title-sm">Anisha Li</h3>
 							<blockquote>
@@ -125,7 +169,9 @@
 					</div>
 
 					<div class="swiper-slide">
-						<img class="slide-avatar" src="/fem-manage-landing-page/images/avatar-ali.png" alt="">
+						<img class="slide-avatar"
+								 src="/fem-manage-landing-page/images/avatar-ali.png"
+								 alt="">
 						<div class="slide-text-wrapper">
 							<h3 class="slide-header title-sm">Ali Bravo</h3>
 							<blockquote>
@@ -138,7 +184,9 @@
 					</div>
 
 					<div class="swiper-slide">
-						<img class="slide-avatar" src="/fem-manage-landing-page/images/avatar-richard.png" alt="">
+						<img class="slide-avatar"
+								 src="/fem-manage-landing-page/images/avatar-richard.png"
+								 alt="">
 						<div class="slide-text-wrapper">
 							<h3 class="slide-header title-sm">Richard Watts</h3>
 							<blockquote>
@@ -151,7 +199,9 @@
 					</div>
 
 					<div class="swiper-slide">
-						<img class="slide-avatar" src="/fem-manage-landing-page/images/avatar-shanai.png" alt="">
+						<img class="slide-avatar"
+								 src="/fem-manage-landing-page/images/avatar-shanai.png"
+								 alt="">
 						<div class="slide-text-wrapper">
 							<h3 class="slide-header title-sm">Shanai Gough</h3>
 							<blockquote>
@@ -164,7 +214,9 @@
 					</div>
 
 					<div class="swiper-slide">
-						<img class="slide-avatar" src="/fem-manage-landing-page/images/avatar-anisha.png" alt="">
+						<img class="slide-avatar"
+								 src="/fem-manage-landing-page/images/avatar-anisha.png"
+								 alt="">
 						<div class="slide-text-wrapper">
 							<h3 class="slide-header title-sm">Anisha Li</h3>
 							<blockquote>
@@ -177,7 +229,9 @@
 					</div>
 
 					<div class="swiper-slide">
-						<img class="slide-avatar" src="/fem-manage-landing-page/images/avatar-ali.png" alt="">
+						<img class="slide-avatar"
+								 src="/fem-manage-landing-page/images/avatar-ali.png"
+								 alt="">
 						<div class="slide-text-wrapper">
 							<h3 class="slide-header title-sm">Ali Bravo</h3>
 							<blockquote>
@@ -190,7 +244,9 @@
 					</div>
 
 					<div class="swiper-slide">
-						<img class="slide-avatar" src="/fem-manage-landing-page/images/avatar-richard.png" alt="">
+						<img class="slide-avatar"
+								 src="/fem-manage-landing-page/images/avatar-richard.png"
+								 alt="">
 						<div class="slide-text-wrapper">
 							<h3 class="slide-header title-sm">Richard Watts</h3>
 							<blockquote>
@@ -203,7 +259,9 @@
 					</div>
 
 					<div class="swiper-slide">
-						<img class="slide-avatar" src="/fem-manage-landing-page/images/avatar-shanai.png" alt="">
+						<img class="slide-avatar"
+								 src="/fem-manage-landing-page/images/avatar-shanai.png"
+								 alt="">
 						<div class="slide-text-wrapper">
 							<h3 class="slide-header title-sm">Shanai Gough</h3>
 							<blockquote>
@@ -221,9 +279,11 @@
 			<button class="pill-btn">Get Started</button>
 		</section>
 
-		<section class="limiter cta-section" aria-labelledby="secondary-title-3">
+		<section class="limiter cta-section"
+						 aria-labelledby="secondary-title-3">
 			<div class="col-2 bottom-blobs grid-center-lg">
-				<h2 class="title-md" id="secondary-title-3">Simplify how your team works today.</h2>
+				<h2 class="title-md"
+						id="secondary-title-3">Simplify how your team works today.</h2>
 				<button class="pill-btn alt">Get Started</button>
 			</div>
 		</section>
@@ -232,15 +292,20 @@
 	<footer class="limiter main-footer">
 		<div class="main-footer__items">
 			<div class="main-footer__item">
-				<a href="#" class="logo" aria-label="home">
+				<a href="#"
+					 class="logo"
+					 aria-label="home">
 					<svg>
 						<use href="/fem-manage-landing-page/images/logo-simbol.svg#logo"></use>
 					</svg>
 				</a>
 
-				<ul class="main-footer__social-links" aria-label="social links">
+				<ul class="main-footer__social-links"
+						aria-label="social links">
 					<li>
-						<a aria-label="facebook" href="#">
+						<a class="social-link"
+							 aria-label="facebook"
+							 href="#">
 							<svg class="social-icon">
 								<use href="/fem-manage-landing-page/images/social-icons.svg#icon-facebook"></use>
 							</svg>
@@ -248,7 +313,9 @@
 					</li>
 
 					<li>
-						<a aria-label="youtube" href="#">
+						<a class="social-link"
+							 aria-label="youtube"
+							 href="#">
 							<svg class="social-icon">
 								<use href="/fem-manage-landing-page/images/social-icons.svg#icon-youtube"></use>
 							</svg>
@@ -256,7 +323,9 @@
 					</li>
 
 					<li>
-						<a aria-label="twitter" href="#">
+						<a class="social-link"
+							 aria-label="twitter"
+							 href="#">
 							<svg class="social-icon">
 								<use href="/fem-manage-landing-page/images/social-icons.svg#icon-twitter"></use>
 							</svg>
@@ -264,7 +333,9 @@
 					</li>
 
 					<li>
-						<a aria-label="pinterest" href="#">
+						<a class="social-link"
+							 aria-label="pinterest"
+							 href="#">
 							<svg class="social-icon">
 								<use href="/fem-manage-landing-page/images/social-icons.svg#icon-pinterest"></use>
 							</svg>
@@ -272,7 +343,9 @@
 					</li>
 
 					<li>
-						<a aria-label="instagram" href="#">
+						<a class="social-link"
+							 aria-label="instagram"
+							 href="#">
 							<svg class="social-icon">
 								<use href="/fem-manage-landing-page/images/social-icons.svg#icon-instagram"></use>
 							</svg>
@@ -281,26 +354,42 @@
 				</ul>
 			</div>
 
-			<nav class="main-footer__item" aria-label="footer website menu">
+			<nav class="main-footer__item"
+					 aria-label="footer website menu">
 				<ul class="main-footer__nav-links">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Pricing</a></li>
-					<li><a href="#">Products</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Careers</a></li>
-					<li><a href="#">Community</a></li>
-					<li><a href="#">Privacy Policy</a></li>
+					<li><a class="nav-link"
+							 href="#">Home</a></li>
+					<li><a class="nav-link"
+							 href="#">Pricing</a></li>
+					<li><a class="nav-link"
+							 href="#">Products</a></li>
+					<li><a class="nav-link"
+							 href="#">About Us</a></li>
+					<li><a class="nav-link"
+							 href="#">Careers</a></li>
+					<li><a class="nav-link"
+							 href="#">Community</a></li>
+					<li><a class="nav-link"
+							 href="#">Privacy Policy</a></li>
 				</ul>
 			</nav>
 
 			<div class="main-footer__item">
-				<form class="main-footer__form" id="main-footer__form" aria-label="subscription form">
-					<label for="email" class="sr-only">email</label>
+				<form class="main-footer__form"
+							id="main-footer__form"
+							aria-label="subscription form">
+					<label for="email"
+								 class="sr-only">email</label>
 					<div class="input-holder">
-						<input type="email" name="email" id="email" placeholder="Updates in your inbox..." inputmode="email"
-							autocomplete="on">
+						<input type="email"
+									 name="email"
+									 id="email"
+									 placeholder="Updates in your inbox..."
+									 inputmode="email"
+									 autocomplete="on">
 					</div>
-					<button type="submit" class="pill-btn">Go</button>
+					<button type="submit"
+									class="pill-btn">Go</button>
 				</form>
 
 				<small class="text-sm copyright">Copyright 2020. All Rights Reserved</small>
