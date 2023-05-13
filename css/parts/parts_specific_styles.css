@@ -1,70 +1,114 @@
-@layer parts {
-	.logo svg {
-		width: 10rem;
-		aspect-ratio: 146 / 24;
-	}
+.logo {
+	outline: none;
+}
+.logo:focus-visible {
+	--logo-color: var(--clr-primary-1);
+}
+.logo svg {
+	width: 10rem;
+	aspect-ratio: 146 / 24;
+}
+/* header & footer nav links */
+.nav-link {
+	position: relative;
+	outline: none;
+}
 
-	/* hero section specific styles */
-	.hero-section {
-		margin-bottom: 8rem;
-	}
+.nav-link::before {
+	--extra-width: 0.4rem;
 
-	.text-limiter {
-		max-width: 30ch;
-		margin-block: 2rem 3rem;
-	}
+	position: absolute;
+	content: "";
+	height: 0.05rem;
+	width: 0;
+	transform: translateX(calc(var(--extra-width) / -2));
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transition: width 0.25s;
+	margin: auto;
+	background-color: var(--clr-neutral-2);
+}
 
-	.hero-img {
-		place-self: center;
-		transform: scale(1.2) translateX(-5%);
-	}
+.mobile .nav-link::before,
+.main-footer .nav-link::before {
+	background-color: var(--clr-primary-1);
+}
 
-	.hero-section .title-lg {
-		max-width: 15ch;
-	}
+.nav-link:focus-visible::before {
+	width: calc(100% + var(--extra-width));
+}
 
-	/* about section specific styles */
-	.about-section {
-		margin-bottom: 8rem;
-	}
+.nav-link:where(:hover, :focus-visible) {
+	color: var(--clr-neutral-2);
+}
 
-	.about-section .title-md {
-		max-width: 20ch;
-	}
+.mobile .nav-link:where(:hover, :focus-visible),
+.main-footer .nav-link:where(:hover, :focus-visible) {
+	color: var(--clr-primary-1);
+}
 
-	.about-section .list {
-		place-self: center;
-		max-width: 50ch;
-		margin-top: 0.8rem;
-	}
+/* hero section specific styles */
+.hero-section {
+	margin-bottom: 8rem;
+}
 
-	/* slider section specific styles */
-	.slider-section {
-		text-align: center;
-		margin-bottom: 8rem;
-	}
+.text-limiter {
+	max-width: 30ch;
+	margin-block: 2rem 3rem;
+}
 
-	.slider-section .title-md {
-		margin-bottom: 4rem;
-	}
+.hero-img {
+	place-self: center;
+	transform: scale(1.2) translateX(-5%);
+}
 
-	.slider-section .pill-btn {
-		place-self: center;
-		margin-block: 3rem;
-	}
+.hero-section .title-lg {
+	max-width: 15ch;
+}
 
-	/* cta section specific styles */
-	.cta-section {
-		background-color: var(--clr-primary-1);
-		padding-block: 4rem;
-		overflow: hidden;
-	}
+/* about section specific styles */
+.about-section {
+	margin-bottom: 8rem;
+}
 
-	.cta-section .title-md {
-		color: var(--clr-neutral-4);
-	}
+.about-section .title-md {
+	max-width: 20ch;
+}
 
-	.cta-section .pill-btn {
-		place-self: center end;
-	}
+.about-section .list {
+	place-self: center;
+	max-width: 50ch;
+	margin-top: 0.8rem;
+}
+
+/* slider section specific styles */
+.slider-section {
+	text-align: center;
+	margin-bottom: 8rem;
+	isolation: isolate;
+}
+
+.slider-section .title-md {
+	margin-bottom: 4rem;
+}
+
+.slider-section .pill-btn {
+	place-self: center;
+	margin-block: 3rem;
+}
+
+/* cta section specific styles */
+.cta-section {
+	background-color: var(--clr-primary-1);
+	padding-block: 4rem;
+	overflow: hidden;
+}
+
+.cta-section .title-md {
+	color: var(--clr-neutral-4);
+}
+
+.cta-section .pill-btn {
+	place-self: center end;
 }

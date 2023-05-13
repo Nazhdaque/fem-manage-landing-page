@@ -1,47 +1,45 @@
-@layer components {
-	.top-blob,
-	.middle-blob,
-	.bottom-blobs {
-		position: relative;
-	}
+.top-blob,
+.middle-blob,
+.bottom-blobs {
+	position: relative;
+}
 
-	.top-blob::before,
-	.middle-blob::before,
-	.bottom-blobs::before,
-	.bottom-blobs::after {
-		position: absolute;
-		content: url(/images/bg-tablet-pattern.svg);
-		z-index: -1;
-	}
+.top-blob::before,
+.middle-blob::before,
+.bottom-blobs::before,
+.bottom-blobs::after {
+	position: absolute;
+	content: url(/images/bg-tablet-pattern.svg);
+	z-index: -1;
+}
 
-	.top-blob::before {
-		top: -27rem;
-		right: -20rem;
-		transform: scale(1.15);
-	}
+.top-blob::before {
+	top: -27rem;
+	right: -20rem;
+	transform: scale(1.15);
+}
 
-	.middle-blob::before {
-		top: 23rem;
-		left: -45rem;
-		transform: scale(1.15);
-	}
+.middle-blob::before {
+	top: 23rem;
+	left: -45rem;
+	transform: scale(1.15);
+}
 
-	.bottom-blobs {
-		--opacity: 0.075;
-		isolation: isolate;
-	}
+.bottom-blobs {
+	--opacity: 0.075;
+	isolation: isolate;
+}
 
-	.bottom-blobs::before {
-		transform: scale(0.66);
-		top: -15rem;
-		left: -7rem;
-		opacity: var(--opacity);
-	}
+.bottom-blobs::before {
+	transform: scale(0.66);
+	top: -15rem;
+	left: -7rem;
+	opacity: var(--opacity);
+}
 
-	.bottom-blobs::after {
-		transform: scale(0.66);
-		top: -37rem;
-		left: 63rem;
-		opacity: var(--opacity);
-	}
+.bottom-blobs::after {
+	transform: scale(0.66);
+	top: -37rem;
+	left: 63rem;
+	opacity: var(--opacity);
 }

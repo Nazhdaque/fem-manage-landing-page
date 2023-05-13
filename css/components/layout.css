@@ -1,26 +1,24 @@
-@layer components {
-	.base-layout {
-		display: grid;
-		grid-template-rows: min-content 1fr min-content;
-	}
+.base-layout {
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
+}
 
-	.limiter {
-		display: grid;
-		column-gap: max(1rem, 4vmin);
-		grid-template-columns: 1fr minmax(0, var(--max-content-width)) 1fr;
-	}
+.limiter {
+	display: grid;
+	column-gap: var(--col-gap);
+	grid-template-columns: 1fr minmax(0, var(--max-content-width)) 1fr;
+}
 
-	.limiter > *:not(.grid-item-full-width) {
-		grid-column: 2;
-	}
+.limiter > *:not(.grid-item-full-width) {
+	grid-column: 2;
+}
 
-	.col-2 {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 9rem;
-	}
+.col-2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 9rem;
+}
 
-	main {
-		display: grid;
-	}
+main {
+	display: grid;
 }
