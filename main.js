@@ -7,13 +7,8 @@ const validator = new JustValidate("#main-footer__form", {
 	errorLabelCssClass: "invalid",
 });
 validator.addField("#email", [
-	{
-		rule: "required",
-	},
-	{
-		rule: "email",
-		errorMessage: "Please insert a valid email",
-	},
+	{ rule: "required" },
+	{ rule: "email", errorMessage: "Please insert a valid email" },
 ]);
 
 class mobileMenu {
@@ -31,13 +26,12 @@ class mobileMenu {
 	}
 
 	setMobile = isMobile => {
+		this.navPanel.classList.toggle("mobile");
 		if (isMobile) {
-			this.navPanel.classList.add("mobile");
 			this.navPanelLinks.forEach(link =>
 				link.addEventListener("click", this.handleClick)
 			);
 		} else {
-			this.navPanel.classList.remove("mobile");
 			this.navPanelLinks.forEach(link =>
 				link.removeEventListener("click", this.handleClick)
 			);
