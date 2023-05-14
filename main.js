@@ -12,64 +12,83 @@ validator.addField("#email", [
 ]);
 
 class mobileMenu {
-	constructor(mobileBreakpoint) {
-		this.mobileBreakpoint = mobileBreakpoint;
-		this.toggleMobile = document.querySelector(".hamburger");
-		this.navPanel = document.querySelector(".main-header__nav-panel");
-		this.toggleImg = document.querySelector(".hamburger-icon");
-		this.navPanelLinks = document.querySelectorAll(
-			".main-header__nav-links .nav-link"
-		);
-		this.mobileWidthMediaQuery = window.matchMedia(
-			`(max-width: ${mobileBreakpoint}px)`
-		);
+	constructor(breakpoint) {
+		this.breakpoint = breakpoint;
+		this.btn = document.querySelector(".hamburger");
+		this.nav = document.querySelector(".main-header__nav-panel");
+		this.icon = document.querySelector(".hamburger-icon");
+		this.links = document.querySelectorAll(".main-header__nav-links .nav-link");
+		this.mediaQueryList = window.matchMedia(`(max-width: ${breakpoint}px)`);
 	}
 
-	setMobile = isMobile => {
-		this.navPanel.classList.toggle("mobile");
-		if (isMobile) {
-			this.navPanelLinks.forEach(link =>
-				link.addEventListener("click", this.handleClick)
-			);
-		} else {
-			this.navPanelLinks.forEach(link =>
-				link.removeEventListener("click", this.handleClick)
-			);
-		}
-	};
-	showHideNav = () => this.navPanel.classList.toggle("visible");
-	switchMobile = isMobileSize =>
-		isMobileSize ? this.setMobile(true) : this.setMobile(false);
-	switchToggleImg = () => {
-		let path = this.toggleImg.getAttribute("src");
+	toggleNav = () => this.nav.classList.toggle("visible");
+	disableNav = () => this.nav.classList.remove("visible");
+	toggleMobile = () => this.nav.classList.toggle("mobile");
+	togglePosFixed = () => this.btn.classList.toggle("close");
+	changeIcon = () => {
+		let path = this.icon.getAttribute("src");
 		path.includes("icon-hamburger")
 			? (path = path.replace("icon-hamburger", "icon-close"))
 			: (path = path.replace("icon-close", "icon-hamburger"));
-		this.toggleImg.setAttribute("src", path);
+		this.icon.setAttribute("src", path);
 	};
-	swithTogglePosition = () => this.toggleMobile.classList.toggle("close");
+
 	handleClick = () => {
-		this.showHideNav();
-		this.swithTogglePosition();
-		this.switchToggleImg();
+		this.toggleNav();
+		this.togglePosFixed();
+		this.changeIcon();
 	};
-	checkMobile = () =>
-		window.innerWidth <= this.mobileBreakpoint && this.setMobile(true);
-	watchMobile = () =>
-		this.mobileWidthMediaQuery.addEventListener("change", event =>
-			this.switchMobile(event.matches)
+
+	toggleOnClick = () => {
+		this.btn.addEventListener("click", this.handleClick);
+	};
+
+	closeOnEsc = () => {
+		window.addEventListener("keyup", event => {
+			if (this.nav.classList.contains("visible") && event.key === "Escape") {
+				this.disableNav();
+				this.togglePosFixed();
+				this.changeIcon();
+			}
+		});
+	};
+
+	interactWith = () => {
+		this.toggleOnClick();
+		this.closeOnEsc();
+	};
+
+	setState = isMobile => {
+		this.toggleMobile();
+		isMobile
+			? this.links.forEach(link =>
+					link.addEventListener("click", this.handleClick)
+			  )
+			: this.links.forEach(link =>
+					link.removeEventListener("click", this.handleClick)
+			  );
+	};
+
+	checkState = () =>
+		window.innerWidth <= this.breakpoint && this.setState(true);
+
+	toggleState = isMobileSize =>
+		isMobileSize ? this.setState(true) : this.setState(false);
+
+	watchState = () =>
+		this.mediaQueryList.addEventListener("change", event =>
+			this.toggleState(event.matches)
 		);
-	switchState = () =>
-		this.toggleMobile.addEventListener("click", this.handleClick);
-	initMobile = () => {
-		headerNavMenu.checkMobile();
-		headerNavMenu.watchMobile();
-		headerNavMenu.switchState();
+
+	initMobileMenu = () => {
+		navPanel.checkState();
+		navPanel.watchState();
+		navPanel.interactWith();
 	};
 }
 
-const headerNavMenu = new mobileMenu(992);
-headerNavMenu.initMobile();
+const navPanel = new mobileMenu(992);
+navPanel.initMobileMenu();
 
 const swiper = new Swiper(".swiper", {
 	centeredSlides: true,
