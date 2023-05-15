@@ -12,13 +12,11 @@ validator.addField("#email", [
 ]);
 
 class mobileMenu {
-	constructor(breakpoint) {
-		this.breakpoint = breakpoint;
+	constructor() {
 		this.btn = document.querySelector(".hamburger");
 		this.nav = document.querySelector(".main-header__nav-panel");
 		this.icon = document.querySelector(".hamburger-icon");
 		this.links = document.querySelectorAll(".main-header__nav-links .nav-link");
-		this.mediaQueryList = window.matchMedia(`(max-width: ${breakpoint}px)`);
 	}
 
 	toggleNav = () => this.nav.classList.toggle("visible");
@@ -39,56 +37,52 @@ class mobileMenu {
 		this.changeIcon();
 	};
 
-	toggleOnClick = () => {
-		this.btn.addEventListener("click", this.handleClick);
-	};
-
-	closeOnEsc = () => {
-		window.addEventListener("keyup", event => {
-			if (this.nav.classList.contains("visible") && event.key === "Escape") {
-				this.disableNav();
-				this.togglePosFixed();
-				this.changeIcon();
-			}
-		});
-	};
-
-	interactWith = () => {
-		this.toggleOnClick();
-		this.closeOnEsc();
+	handleEsc = event => {
+		if (this.nav.classList.contains("visible") && event.code === "Escape") {
+			this.disableNav();
+			this.togglePosFixed();
+			this.changeIcon();
+		}
 	};
 
 	setState = isMobile => {
 		this.toggleMobile();
-		isMobile
-			? this.links.forEach(link =>
-					link.addEventListener("click", this.handleClick)
-			  )
-			: this.links.forEach(link =>
-					link.removeEventListener("click", this.handleClick)
-			  );
+		if (isMobile) {
+			this.btn.addEventListener("click", this.handleClick);
+			window.addEventListener("keydown", this.handleEsc);
+			this.links.forEach(link =>
+				link.addEventListener("click", this.handleClick)
+			);
+		} else {
+			this.btn.removeEventListener("click", this.handleClick);
+			window.removeEventListener("keydown", this.handleEsc);
+			this.links.forEach(link =>
+				link.removeEventListener("click", this.handleClick)
+			);
+		}
 	};
 
-	checkState = () =>
-		window.innerWidth <= this.breakpoint && this.setState(true);
+	checkState = breakpoint =>
+		window.innerWidth <= breakpoint && this.setState(true);
 
 	toggleState = isMobileSize =>
 		isMobileSize ? this.setState(true) : this.setState(false);
 
-	watchState = () =>
-		this.mediaQueryList.addEventListener("change", event =>
+	watchState = breakpoint => {
+		const mediaQueryList = window.matchMedia(`(max-width: ${breakpoint}px)`);
+		mediaQueryList.addEventListener("change", event =>
 			this.toggleState(event.matches)
 		);
+	};
 
-	initMobileMenu = () => {
-		navPanel.checkState();
-		navPanel.watchState();
-		navPanel.interactWith();
+	initMobileMenuOn = breakpoint => {
+		navPanel.checkState(breakpoint);
+		navPanel.watchState(breakpoint);
 	};
 }
 
-const navPanel = new mobileMenu(992);
-navPanel.initMobileMenu();
+const navPanel = new mobileMenu();
+navPanel.initMobileMenuOn(992);
 
 const swiper = new Swiper(".swiper", {
 	centeredSlides: true,
