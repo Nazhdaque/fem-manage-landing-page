@@ -14,8 +14,7 @@ API.get("slider-data.json").then(data => {
 	const slides = [];
 
 	data.forEach(entry => {
-		const name = entry.person;
-		const text = entry.text;
+		const { person: name, text } = entry;
 		const firstName = name.split(" ")[0].toLowerCase();
 		const pathname = `images/avatar-${firstName}.png`;
 
