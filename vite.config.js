@@ -1,5 +1,3 @@
 import { defineConfig } from "vite";
 
-export default defineConfig({
-	base: "/fem-manage-landing-page/",
-});
+export default defineConfig({ base: "/fem-manage-landing-page/" });

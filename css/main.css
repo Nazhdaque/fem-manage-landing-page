@@ -1,14 +1,19 @@
-@layer base, components, parts, finishing;
+@layer common, components, parts, utilities, media;
 
-@import url(./base.css) layer(base);
-@import url(./components/typography.css) layer(base);
-@import url(./components/layout.css) layer(components);
+@import url(./common/fonts.css) layer(common);
+@import url(./common/root.css) layer(common);
+@import url(./common/typography.css) layer(common);
+@import url(./common/base.css) layer(common);
+@import url(./common/layout.css) layer(common);
+
 @import url(./components/buttons.css) layer(components);
 @import url(./components/swiper.css) layer(components);
 @import url(./components/list.css) layer(components);
 @import url(./components/blobs.css) layer(components);
+
 @import url(./parts/header.css) layer(parts);
+@import url(./parts/sections.css) layer(parts);
 @import url(./parts/footer.css) layer(parts);
-@import url(./parts/parts_specific_styles.css) layer(parts);
-@import url(./media.css) layer(finishing);
-@import url(./utilities.css) layer(finishing);
+
+@import url(./common/utilities.css) layer(utilities);
+@import url(./common/media.css) layer(media);

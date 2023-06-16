@@ -1,0 +1,18 @@
+:root {
+	--max-content-width: 75rem;
+	--min-content-width: 20rem;
+
+	--clr-primary-1: hsl(12, 88%, 59%);
+	--clr-primary-2: hsl(228, 39%, 23%);
+	--clr-primary-3: hsl(12, 88%, 75%);
+
+	--clr-neutral-1: hsl(233, 12%, 13%);
+	--clr-neutral-2: hsl(227, 12%, 61%);
+	--clr-neutral-3: hsl(13, 100%, 96%);
+	--clr-neutral-4: hsl(0, 0%, 98%);
+	--clr-neutral-5: hsl(227, 12%, 80%);
+
+	--border-radius: 100vw;
+
+	--col-gap: max(1rem, 4vmin);
+}

@@ -49,6 +49,7 @@
 
 .main-header__nav-panel.mobile > * {
 	--target-mobile-viewport-width: 375px;
+
 	flex-direction: column;
 	place-items: center;
 	background-color: white;
